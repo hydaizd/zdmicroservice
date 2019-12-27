@@ -1,0 +1,10 @@
+APPLICATION_ID: bmi #应用 ID
+cse:
+  service:
+    registry:
+      type: servicecenter
+      address: http://192.168.0.200:30100 #注册中心（ServiceCenter）的地址
+  handler:
+    chain:
+      Consumer:
+        default: ratelimiter-consumer

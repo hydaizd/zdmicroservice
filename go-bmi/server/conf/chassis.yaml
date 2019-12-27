@@ -1,0 +1,15 @@
+#chassis.yaml中配置的是微服务的公共属性，如公共的AppId信息，使用的注册中心类型信息、地址信息，服务的协议、监听地址、注册发现地址、传输协议信息等
+APPLICATION_ID: bmi #应用 ID
+cse:
+  service:
+    registry:
+      type: servicecenter
+      address: http://192.168.0.200:30100 #注册中心（ServiceCenter）的地址（If type is File then address will be the path of the file）
+  protocols:
+    rest:
+      listenAddress: 127.0.0.1:5001 #微服务的监听地址
+      #advertiseAddress: "internal_ip:5001"
+  handler:
+    chain:
+      Provider:
+        default: ratelimiter-provider

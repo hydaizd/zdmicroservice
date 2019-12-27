@@ -1,0 +1,7 @@
+cse:
+  flowcontrol:
+    Consumer:
+      qps:
+        enabled: true  # 是否开启限流，默认true
+        limit:
+          RESTServer: 1  # 针对某微服务每秒允许的请求数，默认2147483647 max int
