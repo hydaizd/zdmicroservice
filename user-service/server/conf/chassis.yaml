@@ -1,0 +1,11 @@
+---
+cse:
+  service:
+    registry:
+      address: http://192.168.0.200:30100 # If type is File then address will be the path of the file
+  protocols:
+    #rest:
+    #  listenAddress: 127.0.0.1:5010 #微服务的监听地址
+    grpc:
+      listenAddress: 127.0.0.1:5011
+      advertiseAddress: 127.0.0.1:5011

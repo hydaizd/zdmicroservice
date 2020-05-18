@@ -12,4 +12,14 @@ cse:
   handler:
     chain:
       Provider:
-        default: ratelimiter-provider
+        default: ratelimiter-provider,bizkeeper-provider  #限流和熔断
+  circuitBreaker:
+    Provider:
+      calculator:
+        requestVolumeThreshold: 3 #10s 内发生错误的阈值，超出阈值触发熔断
+    fallback:
+      Provider:
+        enabled: true
+    fallbackpolicy:
+      Provider:
+        policy: returnnull  #出错后的处理策略
